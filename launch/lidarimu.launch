@@ -1,0 +1,13 @@
+<launch>
+
+<include file="$(find razor_imu_9dof)/launch/razor-pub.launch"/>
+
+<include file="$(find hokuyo_node)/hokuyo_test.launch"/>
+
+<node pkg="robot_setup_tf" name="tf_broadcaster" type="tf_broadcaster"/>
+
+<node pkg="robot_setup_tf" name="point_cloud_laser" type="point_cloud_laser"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d lidarimudemo.rviz"/>
+
+</launch>

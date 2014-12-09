@@ -1,0 +1,11 @@
+<launch>
+
+<include file="$(find razor_imu_9dof)/launch/razor-pub.launch"/>
+
+<include file="$(find hokuyo_node)/hokuyo_test.launch"/>
+
+<node pkg="robot_setup_tf" name="tf_broadcaster" type="tf_broadcaster"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d lidarimudemo.rviz"/>
+
+</launch>
